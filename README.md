@@ -1,22 +1,12 @@
-# QIMEN website — Direction B handoff
+## COMMENT
+All of the below and all of the html until now is just Claude-generated.
+I (KR) wanted to give an inital direction of style. Feel free to change whatever you want.
+
+# QIMEN website
 
 Clean, editable HTML/CSS for the QIMEN project page (PIKE & PRISM schemes,
 Chinese Cryptography Competition 2026 submission).
 
-This is **Direction B** — the "Terminal" visual treatment (monospace-forward,
-ASCII dividers, dark BibTeX block). Everything React/Babel and the in-page
-Tweaks panel have been stripped — what's left is plain HTML + CSS + ~30 lines
-of vanilla JS.
-
-## Files
-
-| file          | role                                                    |
-|---------------|---------------------------------------------------------|
-| `index.html`  | Page markup + tiny tab-switching / clipboard JS         |
-| `styles.css`  | All styling, with `:root` design tokens at the top      |
-| `README.md`   | This file                                               |
-
-No build step. Open `index.html` in a browser, or drop it into any static host.
 
 ## Editing the things you'll actually want to change
 

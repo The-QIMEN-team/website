@@ -119,23 +119,6 @@ body {
   text-underline-offset: 15px;
 }
 
-.compact-header {
-  min-height: 0;
-}
-
-.compact-header .brand-mark {
-  width: 128px;
-  height: 170px;
-}
-
-.compact-header .brand-copy {
-  padding-top: 0;
-}
-
-.compact-header .site-nav {
-  margin-top: 98px;
-}
-
 .hero {
   position: relative;
   min-height: calc(100vh - 305px);
@@ -294,18 +277,43 @@ h1 {
   object-position: 50% 52%;
 }
 
-.home-section p {
+.home-section .suite-lead {
   position: relative;
   z-index: 1;
-  max-width: 940px;
+  max-width: 980px;
   margin: 52px auto 0;
   font-size: clamp(20px, 1.65vw, 32px);
   line-height: 1.3;
   color: var(--muted-ink);
 }
 
-.home-section p:last-child {
-  margin-bottom: 0;
+.home-suite {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  justify-items: center;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.home-suite p {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  max-width: min(920px, 90vw);
+  margin: 0;
+  color: var(--muted-ink);
+  font-size: clamp(20px, 1.65vw, 32px);
+  line-height: 1.22;
+}
+
+.suite-logo {
+  width: clamp(68px, 5.8vw, 104px);
+  height: clamp(68px, 5.8vw, 104px);
+  flex: 0 0 auto;
+  object-fit: contain;
+  object-position: 50% 52%;
 }
 
 .page-main {
@@ -392,19 +400,6 @@ h1 {
   .site-nav a.active {
     text-decoration-thickness: 3px;
     text-underline-offset: 8px;
-  }
-
-  .compact-header {
-    min-height: auto;
-  }
-
-  .compact-header .brand-mark {
-    width: 112px;
-    height: 150px;
-  }
-
-  .compact-header .brand-copy {
-    padding-top: 0;
   }
 
   .hero {
@@ -501,6 +496,11 @@ h1 {
   .hero-title-row {
     flex-direction: column;
     gap: 18px;
+  }
+
+  .home-suite p {
+    flex-wrap: wrap;
+    gap: 8px;
   }
 
   h1 {

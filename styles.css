@@ -440,36 +440,14 @@ h1 {
   text-align: left;
 }
 
-.team-list {
-  display: grid;
-  gap: 0;
-  max-width: 1120px;
-  border-top: 2px solid rgba(0, 0, 0, 0.22);
+.team-text {
+  max-width: 980px;
 }
 
-.team-row {
-  display: grid;
-  grid-template-columns: 58px minmax(220px, 0.9fr) minmax(280px, 1.1fr);
-  gap: 22px;
-  align-items: baseline;
-  padding: 17px 0 16px;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.18);
-  color: var(--muted-ink);
-}
-
-.team-row span {
-  font-family: "Courier New", Courier, monospace;
-  font-size: 22px;
-}
-
-.team-row strong {
-  color: var(--ink);
-  font-size: clamp(20px, 1.8vw, 31px);
-}
-
-.team-row em {
-  font-size: clamp(18px, 1.45vw, 25px);
-  font-style: normal;
+.team-text p {
+  margin-bottom: 12px;
+  font-size: clamp(21px, 1.8vw, 30px);
+  line-height: 1.32;
 }
 
 @media (max-width: 980px) {
@@ -521,15 +499,6 @@ h1 {
   .site-nav a.active {
     text-decoration-thickness: 3px;
     text-underline-offset: 8px;
-  }
-
-  .team-row {
-    grid-template-columns: 46px 1fr;
-    gap: 8px 16px;
-  }
-
-  .team-row em {
-    grid-column: 2;
   }
 
   .hero {

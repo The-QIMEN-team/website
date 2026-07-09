@@ -1,324 +1,71 @@
 <!doctype html>
 <html lang="en">
-<head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>QIMEN — PIKE &amp; PRISM</title>
-
-<!-- ───── Fonts ─────────────────────────────────────────────────────────── -->
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet" />
-
-<link rel="stylesheet" href="styles.css" />
-</head>
-
-<!-- body[data-scheme] toggles between "pike" and "prism" via the tab JS at bottom -->
-<body data-scheme="pike">
-
-<div class="canvas">
-
-  <!-- ── Top bar ─────────────────────────────────────────────────────────── -->
-  <header class="topbar">
-    <div class="brand">
-      <span class="sq"></span>QIMEN<span class="meta">team</span>
-    </div>
-
-    <nav class="tabs" role="tablist" aria-label="Scheme">
-      <button class="tab" data-tab="pike"  role="tab" aria-selected="true">
-        <span class="brk">[</span>&nbsp;<b>PIKE</b>&nbsp;<span class="brk">]</span>
-      </button>
-      <button class="tab" data-tab="prism" role="tab" aria-selected="false">
-        <span class="brk">[</span>&nbsp;<b>PRISM</b>&nbsp;<span class="brk">]</span>
-      </button>
-    </nav>
-
-    <div class="topright">
-      <!-- Replace href with your repository or contact link -->
-      <a href="#"><span class="sq"></span>Repository</a>
-    </div>
-  </header>
-
-  <!-- ── Status strip ────────────────────────────────────────────────────── -->
-  <div class="status">
-    <div class="cell"><span>submission</span><b>CCC&nbsp;2026</b></div>
-    <div class="cell"><span>family</span><b>Isogenies (higher-dim)</b></div>
-    <div class="cell">
-      <span class="pike-only">primitive</span><b class="pike-only">PKE&nbsp;/&nbsp;KEM</b>
-      <span class="prism-only">primitive</span><b class="prism-only">Signature</b>
-    </div>
-    <div class="cell"><span>status</span><b>round&nbsp;1</b></div>
-  </div>
-
-
-  <!-- ── Main grid (side nav + content) ──────────────────────────────────── -->
-  <div class="grid">
-
-    <nav class="side" aria-label="Section nav">
-      <div class="ttl">// contents</div>
-      <ol>
-        <li><a href="#overview"><span class="n">01</span>overview</a></li>
-        <li><a href="#specs"><span class="n">02</span>specs</a></li>
-        <li><a href="#perf"><span class="n">03</span>performance</a></li>
-        <li><a href="#team"><span class="n">04</span>team</a></li>
-        <li><a href="#cite"><span class="n">05</span>citation</a></li>
-      </ol>
-    </nav>
-
-    <div class="content">
-
-      <!-- ── Hero ─────────────────────────────────────────────────────────── -->
-      <section class="hero" id="top">
-        <div class="kicker">
-          <span class="blip"></span>
-          <span class="pike-only">cryptographic scheme&nbsp;&nbsp;//&nbsp;&nbsp;public-key encryption</span>
-          <span class="prism-only">cryptographic scheme&nbsp;&nbsp;//&nbsp;&nbsp;digital signature</span>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>QIMEN</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="brand">
+        <img class="brand-mark" src="elements/奇门logo_透明底.png" alt="QIMEN logo">
+        <div class="brand-copy">
+          <div class="brand-name">QIMEN</div>
+          <p>A one sentence brief</p>
         </div>
+      </div>
 
-        <h1>QIMEN<br/><span class="nm schemenm"></span>&nbsp;<span class="sl">_</span></h1>
+      <nav class="site-nav" aria-label="Primary navigation">
+        <a href="#section-1">
+          <img src="elements/gate.png" alt="" aria-hidden="true">
+          <span>Section1</span>
+        </a>
+        <a href="#section-2">
+          <img src="elements/gate.png" alt="" aria-hidden="true">
+          <span>Section2</span>
+        </a>
+        <a href="#section-3">
+          <img src="elements/gate.png" alt="" aria-hidden="true">
+          <span>Section3</span>
+        </a>
+      </nav>
+    </header>
 
-        <!-- One-line PIKE description -->
-        <p class="tag pike-only">
-          <strong>PIKE</strong> is an isogeny-based public-key encryption scheme. Built on top of
-          <em>POKE</em>, PIKE uses pairings to improve performance while keeping the compact keys
-          characteristic of higher-dimensional isogeny constructions.
-        </p>
+    <main>
+      <section class="hero" id="section-1">
+        <img class="watermark watermark-left" src="elements/奇门logo_透明底.png" alt="" aria-hidden="true">
+        <img class="watermark watermark-right" src="elements/奇门logo_透明底.png" alt="" aria-hidden="true">
 
-        <!-- One-line PRISM description -->
-        <p class="tag prism-only">
-          <strong>PRISM</strong> is a digital signature scheme derived from an isogeny-based
-          identification protocol. Through higher-dimensional isogenies, PRISM achieves short
-          signatures and competitive signing &amp; verification throughput.
-        </p>
-
-        <!-- Tag chips. Use the .fl modifier so they render as flex when visible. -->
-        <div class="pikemeta pike-only fl">
-          <span class="chip"><span class="sq"></span>isogeny-based</span>
-          <span class="chip"><span class="sq"></span>higher-dimensional</span>
-          <span class="chip"><span class="sq"></span>pairing-improved POKE</span>
-          <span class="chip"><span class="sq"></span>compact keys</span>
-        </div>
-        <div class="prismmeta prism-only fl">
-          <span class="chip"><span class="sq"></span>isogeny-based</span>
-          <span class="chip"><span class="sq"></span>higher-dimensional</span>
-          <span class="chip"><span class="sq"></span>id-protocol → fiat-shamir</span>
-          <span class="chip"><span class="sq"></span>short signatures</span>
-        </div>
-      </section>
-
-
-      <!-- ── 01 · Overview ────────────────────────────────────────────────── -->
-      <section class="blk" id="overview">
-        <div class="crumbs">01 · overview</div>
-        <h2>What is <span class="schemenm"></span>?</h2>
-        <div class="ascii-rule" aria-hidden="true">────────────────────────────────────────────────────────────────────────────</div>
-
-        <div class="pike-only">
-          <p>
-            <strong>QIMEN&nbsp;PIKE</strong> is constructed on top of <em>POKE</em>, a recent
-            public-key encryption framework over supersingular isogenies. By introducing
-            <strong>pairing-based</strong> evaluation in the decryption step, PIKE eliminates a
-            structural bottleneck of the original scheme, yielding faster encryption and
-            decryption without enlarging keys or ciphertexts.
-          </p>
-          <p>
-            Like its sibling PRISM, PIKE relies on <strong>higher-dimensional isogenies</strong>
-            — a recent breakthrough that turns the abstract Kani correspondence into a concrete,
-            evaluable primitive.
-          </p>
-        </div>
-
-        <div class="prism-only">
-          <p>
-            <strong>QIMEN&nbsp;PRISM</strong> is obtained from an <em>identification protocol</em>
-            via the Fiat–Shamir transform. The underlying interactive protocol is sound under
-            standard isogeny assumptions; PRISM compiles it into a non-interactive signature
-            with short challenges and compact responses.
-          </p>
-          <p>
-            Signing and verification are dominated by evaluations of
-            <strong>higher-dimensional isogenies</strong> — the same primitive that powers
-            recent SQIsign variants — giving PRISM a favourable trade-off between signature
-            size and signing speed.
-          </p>
-        </div>
-      </section>
-
-
-      <!-- ── 02 · Specs ───────────────────────────────────────────────────── -->
-      <section class="blk" id="specs">
-        <div class="crumbs">02 · specs</div>
-        <h2>
-          Parameter sets&nbsp;<span style="font-size:14px;font-family:var(--f-mono);color:var(--ink-3);font-weight:400;letter-spacing:.06em">// bytes</span>
-        </h2>
-        <div class="ascii-rule" aria-hidden="true">────────────────────────────────────────────────────────────────────────────</div>
-
-        <!-- PIKE: replace every — with real values -->
-        <table class="data pike-only" aria-label="PIKE parameters">
-          <thead>
-            <tr><th>level</th><th class="num">public&nbsp;key</th><th class="num">secret&nbsp;key</th><th class="num">ciphertext</th></tr>
-          </thead>
-          <tbody>
-            <tr><td class="lvl">NIST&nbsp;I</td>   <td class="num"><span class="pending">— bytes</span></td><td class="num"><span class="pending">— bytes</span></td><td class="num"><span class="pending">— bytes</span></td></tr>
-            <tr><td class="lvl">NIST&nbsp;III</td> <td class="num"><span class="pending">— bytes</span></td><td class="num"><span class="pending">— bytes</span></td><td class="num"><span class="pending">— bytes</span></td></tr>
-            <tr><td class="lvl">NIST&nbsp;V</td>   <td class="num"><span class="pending">— bytes</span></td><td class="num"><span class="pending">— bytes</span></td><td class="num"><span class="pending">— bytes</span></td></tr>
-          </tbody>
-        </table>
-
-        <!-- PRISM: replace every — with real values -->
-        <table class="data prism-only" aria-label="PRISM parameters">
-          <thead>
-            <tr><th>level</th><th class="num">public&nbsp;key</th><th class="num">secret&nbsp;key</th><th class="num">signature</th></tr>
-          </thead>
-          <tbody>
-            <tr><td class="lvl">NIST&nbsp;I</td>   <td class="num"><span class="pending">— bytes</span></td><td class="num"><span class="pending">— bytes</span></td><td class="num"><span class="pending">— bytes</span></td></tr>
-            <tr><td class="lvl">NIST&nbsp;III</td> <td class="num"><span class="pending">— bytes</span></td><td class="num"><span class="pending">— bytes</span></td><td class="num"><span class="pending">— bytes</span></td></tr>
-            <tr><td class="lvl">NIST&nbsp;V</td>   <td class="num"><span class="pending">— bytes</span></td><td class="num"><span class="pending">— bytes</span></td><td class="num"><span class="pending">— bytes</span></td></tr>
-          </tbody>
-        </table>
-      </section>
-
-
-      <!-- ── 03 · Performance ─────────────────────────────────────────────── -->
-      <section class="blk" id="perf">
-        <div class="crumbs">03 · performance</div>
-        <h2>
-          Cycle counts&nbsp;<span style="font-size:14px;font-family:var(--f-mono);color:var(--ink-3);font-weight:400;letter-spacing:.06em">// NIST&nbsp;I · megacycles</span>
-        </h2>
-        <div class="ascii-rule" aria-hidden="true">────────────────────────────────────────────────────────────────────────────</div>
-
-        <!-- PIKE: keygen / encrypt / decrypt -->
-        <div class="pike-only">
-          <div class="pcell"><span class="lbl">› KeyGen</span> <span class="num pending">pending</span><span class="u">megacycles</span></div>
-          <div class="pcell"><span class="lbl">› Encrypt</span><span class="num pending">pending</span><span class="u">megacycles</span></div>
-          <div class="pcell"><span class="lbl">› Decrypt</span><span class="num pending">pending</span><span class="u">megacycles</span></div>
-        </div>
-
-        <!-- PRISM: keygen / sign / verify -->
-        <div class="prism-only">
-          <div class="pcell"><span class="lbl">› KeyGen</span><span class="num pending">pending</span><span class="u">megacycles</span></div>
-          <div class="pcell"><span class="lbl">› Sign</span>  <span class="num pending">pending</span><span class="u">megacycles</span></div>
-          <div class="pcell"><span class="lbl">› Verify</span><span class="num pending">pending</span><span class="u">megacycles</span></div>
-        </div>
-      </section>
-
-
-      <!-- ── 04 · Team ────────────────────────────────────────────────────── -->
-      <section class="blk" id="team">
-        <div class="crumbs">04 · team</div>
-        <h2>Authors</h2>
-        <div class="ascii-rule" aria-hidden="true">────────────────────────────────────────────────────────────────────────────</div>
-
-        <div class="team">
-          <div class="row"><span class="n">01</span><span class="nm">Wouter Castryck</span>           <span class="af">COSIC, KU Leuven</span></div>
-          <div class="row"><span class="n">02</span><span class="nm">Mingjie Chen</span>              <span class="af">COSIC, KU Leuven</span></div>
-          <div class="row"><span class="n">03</span><span class="nm">Arthur Herlédan Le Merdy</span> <span class="af">COSIC, KU Leuven</span></div>
-          <div class="row"><span class="n">04</span><span class="nm">Zhi Hu</span>                    <span class="af">Central South University</span></div>
-          <div class="row"><span class="n">05</span><span class="nm">Zhuo Huang</span>                <span class="af">Shanghai Jiao Tong University</span></div>
-          <div class="row"><span class="n">06</span><span class="nm">Yi-Fu Lai</span>                 <span class="af">Shanghai Jiao Tong University</span></div>
-          <div class="row"><span class="n">07</span><span class="nm">Dania Lazzarini</span>           <span class="af">Université Libre de Bruxelles</span></div>
-          <div class="row"><span class="n">08</span><span class="nm">Kaizhan Lin</span>               <span class="af">Fudan University</span></div>
-          <div class="row"><span class="n">09</span><span class="nm">Xuzhe Liu</span>                 <span class="af">Central South University</span></div>
-          <div class="row"><span class="n">10</span><span class="nm">Luciano Maino</span>             <span class="af">University of Birmingham</span></div>
-          <div class="row"><span class="n">11</span><span class="nm">Tomoki Moriya</span>             <span class="af">Mitsubishi Electric</span></div>
-          <div class="row"><span class="n">12</span><span class="nm">Krijn Reijnders</span>           <span class="af">COSIC, KU Leuven</span></div>
-          <div class="row"><span class="n">13</span><span class="nm">Yunqi Wen</span>                 <span class="af">Central South University</span></div>
-          <div class="row"><span class="n">14</span><span class="nm">Yu Yu</span>                     <span class="af">Shanghai Jiao Tong University</span></div>
-        </div>
-      </section>
-
-
-      <!-- ── 05 · Citation ────────────────────────────────────────────────── -->
-      <section class="blk" id="cite">
-        <div class="crumbs">05 · citation</div>
-        <h2>Cite <span class="schemenm"></span></h2>
-        <div class="ascii-rule" aria-hidden="true">────────────────────────────────────────────────────────────────────────────</div>
-
-        <!-- PIKE BibTeX -->
-        <div class="cite pike-only">
-          <div class="hd">
-            <span class="lf"><span class="dots"><i></i><i></i><i></i></span>&nbsp;&nbsp;bibtex&nbsp;·&nbsp;qimen-pike</span>
-            <button class="copybtn" data-copy="cite-pike">Copy</button>
+        <div class="hero-lockup" aria-label="QIMEN PIKE">
+          <div class="hero-title-row">
+            <h1>QIMEN</h1>
+            <img class="pike-mark" src="elements/奇门logo_pike_透明底.png" alt="PIKE logo">
           </div>
-<pre id="cite-pike">@techreport{QIMEN-PIKE:2026,
-  author      = {Castryck, Wouter and Chen, Mingjie and Herl{\'e}dan Le Merdy, Arthur
-                 and Hu, Zhi and Huang, Zhuo and Lai, Yi-Fu and Lazzarini, Dania
-                 and Lin, Kaizhan and Liu, Xuzhe and Maino, Luciano and Moriya, Tomoki
-                 and Reijnders, Krijn and Wen, Yunqi and Yu, Yu},
-  title       = {{QIMEN PIKE}: Pairing-Improved Isogeny Key Encapsulation},
-  institution = {Chinese Cryptography Competition},
-  year        = {2026},
-  url         = {https://qimen.example/}
-}</pre>
+          <div class="scheme-name">PIKE</div>
         </div>
 
-        <!-- PRISM BibTeX -->
-        <div class="cite prism-only">
-          <div class="hd">
-            <span class="lf"><span class="dots"><i></i><i></i><i></i></span>&nbsp;&nbsp;bibtex&nbsp;·&nbsp;qimen-prism</span>
-            <button class="copybtn" data-copy="cite-prism">Copy</button>
-          </div>
-<pre id="cite-prism">@techreport{QIMEN-PRISM:2026,
-  author      = {Castryck, Wouter and Chen, Mingjie and Herl{\'e}dan Le Merdy, Arthur
-                 and Hu, Zhi and Huang, Zhuo and Lai, Yi-Fu and Lazzarini, Dania
-                 and Lin, Kaizhan and Liu, Xuzhe and Maino, Luciano and Moriya, Tomoki
-                 and Reijnders, Krijn and Wen, Yunqi and Yu, Yu},
-  title       = {{QIMEN PRISM}: A Signature Scheme from Higher-Dimensional Isogenies},
-  institution = {Chinese Cryptography Competition},
-  year        = {2026},
-  url         = {https://qimen.example/}
-}</pre>
-        </div>
+        <article class="intro-copy">
+          <h2>Title title title</h2>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+            incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+            nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+            Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+            fugiat nulla pariatur.
+          </p>
+        </article>
       </section>
 
-    </div><!-- /.content -->
-  </div><!-- /.grid -->
+      <section class="content-band" id="section-2">
+        <h2>Section2</h2>
+        <p>Replace this text with the next block of QIMEN content.</p>
+      </section>
 
-  <!-- ── Footer ────────────────────────────────────────────────────────────── -->
-  <footer class="bot">
-    <span>QIMEN · CCC 2026</span>
-    <span>Direction B · Terminal</span>
-    <span><a href="#top">↑ Top</a></span>
-  </footer>
-
-  <div class="pad"></div>
-</div>
-
-
-<!-- ── Tiny vanilla JS: tab switching + copy citation ───────────────────── -->
-<script>
-  // Tab switch (PIKE / PRISM).
-  // Toggles body[data-scheme] and aria-selected on the buttons.
-  (function () {
-    const body = document.body;
-    const tabs = document.querySelectorAll('.tab');
-
-    tabs.forEach(t => {
-      t.addEventListener('click', () => {
-        const v = t.dataset.tab;
-        body.setAttribute('data-scheme', v);
-        tabs.forEach(x => x.setAttribute('aria-selected', x === t ? 'true' : 'false'));
-        try { history.replaceState(null, '', '#' + v); } catch (e) {}
-      });
-    });
-
-    // Honor a URL hash on first load (e.g. site.html#prism).
-    const h = (location.hash || '').replace('#', '');
-    if (h === 'prism') document.querySelector('.tab[data-tab="prism"]').click();
-  })();
-
-  // Copy BibTeX to clipboard.
-  document.querySelectorAll('.copybtn').forEach(btn => {
-    btn.addEventListener('click', async () => {
-      const text = document.getElementById(btn.dataset.copy).textContent;
-      try { await navigator.clipboard.writeText(text); } catch (e) {}
-      btn.classList.add('ok');
-      const prev = btn.textContent;
-      btn.textContent = 'Copied ✓';
-      setTimeout(() => { btn.classList.remove('ok'); btn.textContent = prev; }, 1400);
-    });
-  });
-</script>
-
-</body>
+      <section class="content-band content-band-dark" id="section-3">
+        <h2>Section3</h2>
+        <p>Replace this text with links, papers, implementation notes, or contact details.</p>
+      </section>
+    </main>
+  </body>
 </html>

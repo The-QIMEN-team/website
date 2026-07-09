@@ -25,15 +25,15 @@ body {
 }
 
 .site-header {
-  min-height: 260px;
-  padding: 26px 8vw 28px 46px;
+  min-height: 0;
+  padding: 4px 8vw 4px 46px;
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
   gap: 24px;
   background: var(--header-bg);
-  border-bottom: 31px solid var(--gold);
-  box-shadow: inset 0 -9px 0 var(--cream), inset 0 -12px 0 #b9b1a0;
+  border-bottom: 20px solid var(--gold);
+  box-shadow: inset 0 -5px 0 var(--cream), inset 0 -8px 0 #b9b1a0;
 }
 
 .brand {
@@ -75,7 +75,7 @@ body {
 
 .site-nav {
   flex: 1 1 auto;
-  margin-top: 162px;
+  margin-top: 142px;
   display: flex;
   align-items: center;
   justify-content: flex-end;
@@ -120,7 +120,7 @@ body {
 }
 
 .compact-header {
-  min-height: 206px;
+  min-height: 0;
 }
 
 .compact-header .brand-mark {
@@ -133,7 +133,7 @@ body {
 }
 
 .compact-header .site-nav {
-  margin-top: 118px;
+  margin-top: 98px;
 }
 
 .hero {
@@ -232,7 +232,7 @@ h1 {
 
 .home-section {
   position: relative;
-  min-height: calc(100vh - 260px);
+  min-height: calc(100vh - 252px);
   overflow: hidden;
   padding: 96px 9.2vw 112px;
   background: var(--paper);

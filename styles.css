@@ -147,24 +147,7 @@ body {
 }
 
 .watermark {
-  position: absolute;
-  z-index: 0;
-  width: min(440px, 32vw);
-  opacity: 0.08;
-  filter: grayscale(1);
-  pointer-events: none;
-}
-
-.watermark-left {
-  left: -150px;
-  top: 78px;
-  transform: rotate(-10deg);
-}
-
-.watermark-right {
-  right: -188px;
-  top: 70px;
-  transform: rotate(11deg);
+  display: none;
 }
 
 .hero-lockup,
@@ -257,6 +240,35 @@ h1 {
   background: var(--paper);
 }
 
+.home-section::before,
+.home-section::after,
+.page-main::before,
+.page-main::after {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  top: 86px;
+  width: min(430px, 31vw);
+  aspect-ratio: 2187 / 2877;
+  background-image: url("elements/奇门logo_透明底.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  opacity: 0.08;
+  filter: grayscale(1);
+  pointer-events: none;
+}
+
+.home-section::before,
+.page-main::before {
+  left: max(-215px, -15.5vw);
+}
+
+.home-section::after,
+.page-main::after {
+  right: max(-215px, -15.5vw);
+}
+
 .home-section p {
   position: relative;
   z-index: 1;
@@ -272,11 +284,15 @@ h1 {
 }
 
 .page-main {
+  position: relative;
+  overflow: hidden;
   min-height: calc(100vh - 230px);
   background: var(--paper);
 }
 
 .page-section {
+  position: relative;
+  z-index: 1;
   width: min(1200px, 82vw);
   margin: 0 auto;
   padding: 96px 0 120px;

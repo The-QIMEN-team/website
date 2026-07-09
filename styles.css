@@ -99,11 +99,16 @@ body {
   white-space: nowrap;
 }
 
-.site-nav img {
+.site-nav a::before {
+  content: "";
+  display: inline-block;
   width: 28px;
   height: 28px;
-  object-fit: cover;
-  object-position: top left;
+  flex: 0 0 28px;
+  background-image: url("elements/gate.png");
+  background-size: cover;
+  background-position: top left;
+  background-repeat: no-repeat;
   filter: invert(1) brightness(1.08);
 }
 
@@ -310,9 +315,10 @@ h1 {
     font-size: 22px;
   }
 
-  .site-nav img {
+  .site-nav a::before {
     width: 24px;
     height: 24px;
+    flex-basis: 24px;
   }
 
   .site-nav a:hover,
@@ -400,9 +406,10 @@ h1 {
     gap: 6px;
   }
 
-  .site-nav img {
+  .site-nav a::before {
     width: 18px;
     height: 18px;
+    flex-basis: 18px;
   }
 
   .page-section {

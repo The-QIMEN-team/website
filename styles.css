@@ -245,7 +245,7 @@ h1 {
   content: "";
   position: absolute;
   z-index: 0;
-  top: 86px;
+  top: 50%;
   width: min(430px, 31vw);
   aspect-ratio: 2187 / 2877;
   background-image: url("elements/奇门logo_透明底.png");
@@ -255,6 +255,7 @@ h1 {
   opacity: 0.08;
   filter: grayscale(1);
   pointer-events: none;
+  transform: translateY(-50%);
 }
 
 .home-section::before,
@@ -515,20 +516,6 @@ h1 {
     margin-top: 16px;
     padding-left: 0;
     font-size: 42px;
-  }
-
-  .watermark {
-    width: 260px;
-  }
-
-  .watermark-left {
-    left: -144px;
-    top: 110px;
-  }
-
-  .watermark-right {
-    right: -152px;
-    top: 176px;
   }
 
   .intro-copy {

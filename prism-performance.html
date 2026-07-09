@@ -4,12 +4,12 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>QIMEN PRISM | Performance</title>
-    <link rel="stylesheet" href="styles.css?v=20260709-nav8">
+    <link rel="stylesheet" href="styles.css?v=20260709-nav9">
   </head>
   <body>
     <header class="site-header">
       <a class="brand" href="prism.html" aria-label="QIMEN PRISM">
-        <img class="brand-mark" src="elements/奇门logo_透明底.png" alt="QIMEN logo">
+        <img class="brand-mark" src="elements/奇门logo_prism_透明底.png" alt="QIMEN-PRISM logo">
         <div class="brand-copy">
           <div class="brand-name">PRISM</div>
         </div>
@@ -23,7 +23,64 @@
     <main class="page-main">
       <section class="page-section">
         <h1>prism performance</h1>
-        <p>tba</p>
+        <p class="table-note">Benchmarks use SM3 as the XOF backend on an Intel(R) Core(TM) Ultra 9 275HX CPU. CPU-cycle values are in 10<sup>6</sup> cycles and averaged over 300 runs.</p>
+
+        <div class="table-stack">
+          <h2>Key and Signature Sizes</h2>
+          <div class="table-wrap">
+            <table class="data-table">
+              <thead>
+                <tr><th>Parameter set</th><th>Public key</th><th>Secret key</th><th>Signature</th></tr>
+              </thead>
+              <tbody>
+                <tr><th>NGCC-1</th><td>81 B</td><td>441 B</td><td>225 B</td></tr>
+                <tr><th>NGCC-2</th><td>129 B</td><td>701 B</td><td>334 B</td></tr>
+                <tr><th>NGCC-3</th><td>257 B</td><td>1401 B</td><td>622 B</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h2>Reference Implementation</h2>
+          <div class="table-wrap">
+            <table class="data-table">
+              <thead>
+                <tr><th>Parameter set</th><th>KeyGen</th><th>Sign</th><th>Verify</th></tr>
+              </thead>
+              <tbody>
+                <tr><th>NGCC-1</th><td>66.95</td><td>78.14</td><td>14.23</td></tr>
+                <tr><th>NGCC-2</th><td>129.66</td><td>166.12</td><td>41.33</td></tr>
+                <tr><th>NGCC-3</th><td>684.67</td><td>969.23</td><td>231.23</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h2>Optimized Implementation</h2>
+          <div class="table-wrap">
+            <table class="data-table">
+              <thead>
+                <tr><th>Parameter set</th><th>KeyGen</th><th>Sign</th><th>Verify</th></tr>
+              </thead>
+              <tbody>
+                <tr><th>NGCC-1</th><td>57.32</td><td>66.27</td><td>9.71</td></tr>
+                <tr><th>NGCC-2</th><td>90.24</td><td>122.52</td><td>24.57</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h2>Throughput</h2>
+          <div class="table-wrap">
+            <table class="data-table">
+              <thead>
+                <tr><th>Parameter set</th><th>Reference KeyGen</th><th>Reference Sign</th><th>Reference Verify</th><th>Optimized KeyGen</th><th>Optimized Sign</th><th>Optimized Verify</th></tr>
+              </thead>
+              <tbody>
+                <tr><th>NGCC-1</th><td>42.7</td><td>40.8</td><td>204.3</td><td>46.2</td><td>44.4</td><td>269.0</td></tr>
+                <tr><th>NGCC-2</th><td>22.3</td><td>20.1</td><td>71.7</td><td>31.6</td><td>27.2</td><td>118.7</td></tr>
+                <tr><th>NGCC-3</th><td>4.3</td><td>3.8</td><td>12.4</td><td colspan="3">NGCC-3 uses the portable C core.</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
       </section>
     </main>
   </body>

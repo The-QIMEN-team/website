@@ -557,6 +557,48 @@ h1 {
   text-align: left;
 }
 
+.code-container {
+  position: relative;
+  max-width: 980px;
+  margin-top: 12px;
+}
+
+.code-container pre {
+  margin: 0;
+  padding: 18px 20px;
+  overflow-x: auto;
+  color: var(--cream);
+  background: var(--header-bg);
+  border-bottom: 5px solid var(--gold);
+}
+
+.code-container code {
+  font-family: "Courier New", Courier, monospace;
+  font-size: clamp(13px, 1vw, 15px);
+  line-height: 1.5;
+  white-space: pre;
+}
+
+.copy-btn {
+  position: absolute;
+  top: 10px;
+  right: 12px;
+  padding: 6px 12px 5px;
+  color: var(--cream);
+  background: rgba(0, 0, 0, 0.35);
+  border: 1px solid var(--gold);
+  font-family: "Courier New", Courier, monospace;
+  font-size: 14px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.copy-btn:hover,
+.copy-btn:focus {
+  color: var(--ink);
+  background: var(--gold);
+}
+
 .team-text {
   max-width: 980px;
 }

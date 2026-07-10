@@ -410,6 +410,25 @@ h1 {
   margin-top: 0;
 }
 
+.paper-list {
+  display: grid;
+  gap: 16px;
+  max-width: 980px;
+}
+
+.paper-entry p {
+  margin-bottom: 6px;
+}
+
+.paper-entry .paper-title {
+  color: var(--ink);
+  font-weight: 700;
+}
+
+.paper-entry .paper-authors {
+  font-size: clamp(15px, 1.1vw, 18px);
+}
+
 .button-link {
   display: inline-block;
   margin-top: 12px;

@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>QIMEN-PRISM</title>
-    <link rel="stylesheet" href="styles.css?v=20260709-nav10">
+    <link rel="stylesheet" href="styles.css?v=20260710-nav11">
   </head>
   <body>
     <header class="site-header">
@@ -16,16 +16,94 @@
       </a>
 
       <nav class="site-nav" aria-label="QIMEN-PRISM navigation">
-        <a href="prism-code.html"><span>code</span></a>
-        <a href="prism-performance.html"><span>performance</span></a>
-        <a href="prism-resources.html"><span>resources</span></a>
+        <a href="#code"><span>code</span></a>
+        <a href="#performance"><span>performance</span></a>
+        <a href="#resources"><span>resources</span></a>
       </nav>
     </header>
 
     <main class="page-main">
       <section class="page-section">
         <h1>qimen-prism</h1>
-        <p>tba</p>
+        <section class="page-subsection" id="code">
+          <h2>code</h2>
+          <div class="repo-card">
+            <p>QIMEN-PRISM source code is maintained in the team repository.</p>
+            <a class="button-link" href="https://github.com/The-QIMEN-team/QIMEN-PRISM">GitHub repository</a>
+          </div>
+          <div class="detail-list">
+            <p><strong>Implementations/</strong> reference signature implementation with a portable C field backend.</p>
+            <p><strong>Optimized_Implementation/</strong> x86-64 BMI2/ADX field assembly for NGCC-1 and NGCC-2; NGCC-3 uses the C core.</p>
+            <p><strong>Test_Vector/</strong> NGCC signature Known Answer Test files for all parameter sets.</p>
+          </div>
+        </section>
+
+        <section class="page-subsection" id="performance">
+          <h2>performance</h2>
+          <p class="table-note">Benchmarks use SM3 as the XOF backend on an Intel(R) Core(TM) Ultra 9 275HX CPU. CPU-cycle values are in 10<sup>6</sup> cycles and averaged over 300 runs.</p>
+
+          <div class="table-stack">
+            <h3>Key and Signature Sizes</h3>
+            <div class="table-wrap">
+              <table class="data-table">
+                <thead>
+                  <tr><th>Parameter set</th><th>Public key</th><th>Secret key</th><th>Signature</th></tr>
+                </thead>
+                <tbody>
+                  <tr><th>NGCC-1</th><td>81 B</td><td>441 B</td><td>225 B</td></tr>
+                  <tr><th>NGCC-2</th><td>129 B</td><td>701 B</td><td>334 B</td></tr>
+                  <tr><th>NGCC-3</th><td>257 B</td><td>1401 B</td><td>622 B</td></tr>
+                </tbody>
+              </table>
+            </div>
+
+            <h3>Reference Implementation</h3>
+            <div class="table-wrap">
+              <table class="data-table">
+                <thead>
+                  <tr><th>Parameter set</th><th>KeyGen</th><th>Sign</th><th>Verify</th></tr>
+                </thead>
+                <tbody>
+                  <tr><th>NGCC-1</th><td>66.95</td><td>78.14</td><td>14.23</td></tr>
+                  <tr><th>NGCC-2</th><td>129.66</td><td>166.12</td><td>41.33</td></tr>
+                  <tr><th>NGCC-3</th><td>684.67</td><td>969.23</td><td>231.23</td></tr>
+                </tbody>
+              </table>
+            </div>
+
+            <h3>Optimized Implementation</h3>
+            <div class="table-wrap">
+              <table class="data-table">
+                <thead>
+                  <tr><th>Parameter set</th><th>KeyGen</th><th>Sign</th><th>Verify</th></tr>
+                </thead>
+                <tbody>
+                  <tr><th>NGCC-1</th><td>57.32</td><td>66.27</td><td>9.71</td></tr>
+                  <tr><th>NGCC-2</th><td>90.24</td><td>122.52</td><td>24.57</td></tr>
+                </tbody>
+              </table>
+            </div>
+
+            <h3>Throughput</h3>
+            <div class="table-wrap">
+              <table class="data-table">
+                <thead>
+                  <tr><th>Parameter set</th><th>Reference KeyGen</th><th>Reference Sign</th><th>Reference Verify</th><th>Optimized KeyGen</th><th>Optimized Sign</th><th>Optimized Verify</th></tr>
+                </thead>
+                <tbody>
+                  <tr><th>NGCC-1</th><td>42.7</td><td>40.8</td><td>204.3</td><td>46.2</td><td>44.4</td><td>269.0</td></tr>
+                  <tr><th>NGCC-2</th><td>22.3</td><td>20.1</td><td>71.7</td><td>31.6</td><td>27.2</td><td>118.7</td></tr>
+                  <tr><th>NGCC-3</th><td>4.3</td><td>3.8</td><td>12.4</td><td colspan="3">NGCC-3 uses the portable C core.</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <section class="page-subsection" id="resources">
+          <h2>resources</h2>
+          <p>tba</p>
+        </section>
       </section>
     </main>
   </body>

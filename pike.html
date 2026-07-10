@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>QIMEN-PIKE</title>
-    <link rel="stylesheet" href="styles.css?v=20260709-nav10">
+    <link rel="stylesheet" href="styles.css?v=20260710-nav11">
   </head>
   <body>
     <header class="site-header">
@@ -16,16 +16,127 @@
       </a>
 
       <nav class="site-nav" aria-label="QIMEN-PIKE navigation">
-        <a href="pike-code.html"><span>code</span></a>
-        <a href="pike-performance.html"><span>performance</span></a>
-        <a href="pike-resources.html"><span>resources</span></a>
+        <a href="#code"><span>code</span></a>
+        <a href="#performance"><span>performance</span></a>
+        <a href="#resources"><span>resources</span></a>
       </nav>
     </header>
 
     <main class="page-main">
       <section class="page-section">
         <h1>qimen-pike</h1>
-        <p>tba</p>
+        <section class="page-subsection" id="code">
+          <h2>code</h2>
+          <div class="repo-card">
+            <p>QIMEN-PIKE source code is maintained in the team repository.</p>
+            <a class="button-link" href="https://github.com/The-QIMEN-team/QIMEN-PIKE">GitHub repository</a>
+          </div>
+          <div class="detail-list">
+            <p><strong>Implementations/</strong> reference QIMEN-PIKE implementation.</p>
+            <p><strong>Optimized_Implementation/</strong> optimized implementation with x86-64 BMI2/ADX finite-field assembly hot paths.</p>
+            <p><strong>Test_Vector/</strong> NGCC KEM Known Answer Test files.</p>
+          </div>
+        </section>
+
+        <section class="page-subsection" id="performance">
+          <h2>performance</h2>
+          <p class="table-note">Benchmarks use SM3 as the XOF backend on an Intel(R) Core(TM) Ultra 9 275HX CPU. CPU-cycle values are in 10<sup>6</sup> cycles and averaged over 300 runs.</p>
+
+          <div class="table-stack">
+            <h3>Key and Ciphertext Sizes</h3>
+            <div class="table-wrap">
+              <table class="data-table">
+                <thead>
+                  <tr>
+                    <th rowspan="2">Parameter set</th>
+                    <th colspan="3">Uncompressed</th>
+                    <th colspan="3">Compressed</th>
+                  </tr>
+                  <tr>
+                    <th>pk</th><th>ct</th><th>sk</th>
+                    <th>pk</th><th>ct</th><th>sk</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr><th>NGCC-1</th><td>641 B</td><td>800 B</td><td>724 B</td><td>405 B</td><td>602 B</td><td>488 B</td></tr>
+                  <tr><th>NGCC-2</th><td>961 B</td><td>1184 B</td><td>1103 B</td><td>595 B</td><td>882 B</td><td>737 B</td></tr>
+                  <tr><th>NGCC-3</th><td>1921 B</td><td>2368 B</td><td>2220 B</td><td>1201 B</td><td>1746 B</td><td>1500 B</td></tr>
+                </tbody>
+              </table>
+            </div>
+
+            <h3>Reference Implementation</h3>
+            <div class="table-wrap">
+              <table class="data-table">
+                <thead>
+                  <tr>
+                    <th rowspan="2">Parameter set</th>
+                    <th colspan="3">Uncompressed</th>
+                    <th colspan="3">Compressed</th>
+                  </tr>
+                  <tr>
+                    <th>KeyGen</th><th>Encaps</th><th>Decaps</th>
+                    <th>KeyGen</th><th>Encaps</th><th>Decaps</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr><th>NGCC-1</th><td>94.15</td><td>34.73</td><td>61.43</td><td>159.61</td><td>61.27</td><td>98.02</td></tr>
+                  <tr><th>NGCC-2</th><td>350.45</td><td>121.33</td><td>222.20</td><td>608.92</td><td>223.68</td><td>360.88</td></tr>
+                  <tr><th>NGCC-3</th><td>3005.44</td><td>1029.46</td><td>1794.11</td><td>4606.19</td><td>1803.16</td><td>2845.02</td></tr>
+                </tbody>
+              </table>
+            </div>
+
+            <h3>Optimized Implementation</h3>
+            <div class="table-wrap">
+              <table class="data-table">
+                <thead>
+                  <tr>
+                    <th rowspan="2">Parameter set</th>
+                    <th colspan="3">Uncompressed</th>
+                    <th colspan="3">Compressed</th>
+                  </tr>
+                  <tr>
+                    <th>KeyGen</th><th>Encaps</th><th>Decaps</th>
+                    <th>KeyGen</th><th>Encaps</th><th>Decaps</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr><th>NGCC-1</th><td>76.16</td><td>26.94</td><td>47.93</td><td>129.31</td><td>48.00</td><td>77.45</td></tr>
+                  <tr><th>NGCC-2</th><td>292.40</td><td>93.86</td><td>171.85</td><td>481.88</td><td>172.94</td><td>280.08</td></tr>
+                  <tr><th>NGCC-3</th><td>2480.87</td><td>803.12</td><td>1405.36</td><td>3639.78</td><td>1421.09</td><td>2243.85</td></tr>
+                </tbody>
+              </table>
+            </div>
+
+            <h3>Throughput</h3>
+            <div class="table-wrap">
+              <table class="data-table">
+                <thead>
+                  <tr>
+                    <th rowspan="2">Parameter set</th>
+                    <th colspan="3">Reference ops/s, uncompressed</th>
+                    <th colspan="3">Optimized ops/s, uncompressed</th>
+                  </tr>
+                  <tr>
+                    <th>KeyGen</th><th>Encaps</th><th>Decaps</th>
+                    <th>KeyGen</th><th>Encaps</th><th>Decaps</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr><th>NGCC-1</th><td>30.4</td><td>84.7</td><td>47.5</td><td>34.9</td><td>104.2</td><td>54.7</td></tr>
+                  <tr><th>NGCC-2</th><td>7.9</td><td>22.0</td><td>12.8</td><td>10.5</td><td>32.8</td><td>17.8</td></tr>
+                  <tr><th>NGCC-3</th><td>0.9</td><td>2.62</td><td>1.48</td><td>1.08</td><td>3.78</td><td>2.15</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <section class="page-subsection" id="resources">
+          <h2>resources</h2>
+          <p>tba</p>
+        </section>
       </section>
     </main>
   </body>

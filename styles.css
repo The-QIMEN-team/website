@@ -371,6 +371,12 @@ h1 {
   line-height: 1;
 }
 
+.content-subsection + .content-subsection {
+  margin-top: 52px;
+  padding-top: 38px;
+  border-top: 4px solid var(--gold);
+}
+
 .repo-card,
 .detail-list {
   max-width: 980px;

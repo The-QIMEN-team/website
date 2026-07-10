@@ -356,6 +356,13 @@ h1 {
   scroll-margin-top: 28px;
 }
 
+.page-section > h1 + .page-subsection,
+.page-section > h1 + .content-subsection,
+.page-section > h1 + .team-text {
+  padding-top: 38px;
+  border-top: 4px solid var(--gold);
+}
+
 .page-subsection + .page-subsection {
   margin-top: 70px;
   padding-top: 38px;

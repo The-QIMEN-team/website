@@ -398,6 +398,13 @@ h1 {
   background: #454543;
 }
 
+.link-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  max-width: 980px;
+}
+
 .resource-list {
   margin: 0;
   padding: 0;

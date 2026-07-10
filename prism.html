@@ -4,27 +4,36 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>QIMEN-PRISM</title>
-    <link rel="stylesheet" href="styles.css?v=20260710-nav13">
+    <link rel="stylesheet" href="styles.css?v=20260710-nav14">
   </head>
   <body>
     <header class="site-header">
       <a class="brand" href="index.html" aria-label="QIMEN home">
-        <img class="brand-mark" src="elements/奇门logo_prism_透明底.png" alt="QIMEN-PRISM logo">
+        <img class="brand-mark" src="elements/奇门logo_透明底.png" alt="QIMEN logo">
         <div class="brand-copy">
           <div class="brand-name">QIMEN</div>
         </div>
       </a>
 
-      <nav class="site-nav" aria-label="QIMEN-PRISM navigation">
-        <a href="#code"><span>code</span></a>
-        <a href="#performance"><span>performance</span></a>
-        <a href="#resources"><span>resources</span></a>
+      <nav class="site-nav" aria-label="Primary navigation">
+        <a href="about.html"><span>about</span></a>
+        <a href="pike.html"><span>qimen-pike</span></a>
+        <a class="active" href="prism.html"><span>qimen-prism</span></a>
+        <a href="team.html"><span>team</span></a>
       </nav>
     </header>
 
     <main class="page-main">
       <section class="page-section">
         <h1>qimen-prism</h1>
+        <section class="page-subsection" id="resources">
+          <h2>resources</h2>
+          <div class="link-group">
+            <a class="button-link" href="resources/main_PRISM.pdf" target="_blank">specification (version 1.0)</a>
+            <a class="button-link" href="resources/main_PRISM_zh.pdf" target="_blank">specification_Chinese (version 1.0, activity polishing)</a>
+          </div>
+        </section>
+
         <section class="page-subsection" id="code">
           <h2>code</h2>
           <div class="repo-card">
@@ -34,7 +43,6 @@
           <div class="detail-list">
             <p><strong>Implementations/</strong> reference signature implementation with a portable C field backend.</p>
             <p><strong>Optimized_Implementation/</strong> x86-64 BMI2/ADX field assembly for NGCC-1 and NGCC-2; NGCC-3 uses the C core.</p>
-            <p><strong>Test_Vector/</strong> NGCC signature Known Answer Test files for all parameter sets.</p>
           </div>
         </section>
 
@@ -98,18 +106,6 @@
               </table>
             </div>
           </div>
-        </section>
-
-        <section class="page-subsection" id="resources">
-          <h2>resources</h2>
-          <ul class="resource-list">
-            <li>
-              <a href="resources/main_PRISM.pdf" target="_blank">specification (version 1.0)</a>
-            </li>
-            <li>
-              <a href="resources/main_PRISM_zh.pdf" target="_blank">specification_zh (version 1.0, activity polishing)</a>
-            </li>
-          </ul>
         </section>
       </section>
     </main>

@@ -384,6 +384,18 @@ h1 {
   border-top: 4px solid var(--gold);
 }
 
+.inline-gate {
+  display: inline-block;
+  width: 1.35em;
+  height: 1.35em;
+  margin: 0 0.12em;
+  vertical-align: -0.22em;
+  background-image: url("elements/gate.png");
+  background-size: cover;
+  background-position: top left;
+  background-repeat: no-repeat;
+}
+
 .repo-card,
 .detail-list {
   max-width: 980px;

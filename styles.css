@@ -110,6 +110,10 @@ body {
   filter: invert(1) brightness(1.08);
 }
 
+.site-nav a.active::before {
+  transform: rotate(-90deg);
+}
+
 .site-nav a:hover,
 .site-nav a.active {
   color: #ffffff;

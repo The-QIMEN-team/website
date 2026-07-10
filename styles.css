@@ -314,8 +314,16 @@ h1 {
   transition: transform 0.18s ease, background-color 0.18s ease;
 }
 
-.suite-half:first-child {
-  border-right: 1px solid var(--rule, rgba(0, 0, 0, 0.14));
+.home-suite::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 1px;
+  height: 60%;
+  background: var(--rule, rgba(0, 0, 0, 0.18));
+  pointer-events: none;
 }
 
 .suite-half:hover,
@@ -785,9 +793,13 @@ h1 {
     gap: 8px;
   }
 
-  .suite-half:first-child {
-    border-right: 0;
-    border-bottom: 1px solid var(--rule, rgba(0, 0, 0, 0.14));
+  .home-suite::before {
+    top: 50%;
+    left: 0;
+    right: 0;
+    width: auto;
+    height: 1px;
+    transform: translateY(-50%);
   }
 
   h1 {
